@@ -31,7 +31,7 @@ print(q1.to_string(index=False))
 # checking the wheather the sql queries are correct or not using pandas
 ok=rech[rech["status"]=="success"].merge(subs[["subscriber_id","plan_id"]],on="subscriber_id")
 ok=ok.merge(plans[["plan_id","plan_name"]],on="plan_id")
-prem=ok[ok["plan_name"]=="premium"]
+prem=ok[ok["plan_name"]=="Premium"]
 print(f"pandas check (Premium): revenue {prem['amount_inr'].sum():,}, "
       f"avg {prem['amount_inr'].mean():.2f}, subscribers {prem['subscriber_id'].nunique()}")
 
